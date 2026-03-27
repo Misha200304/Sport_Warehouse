@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SportHub - Athletic Warehouse</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<!-- Header -->
+	<header class="header">
+		<div class="header-container">
+			<div class="logo">
+				<div class="logo-icon">⚽</div>
+				<h1>SportHub</h1>
+			</div>
+			<div class="search-bar">
+				<input 
+					type="text" 
+					id="searchInput" 
+					placeholder="Search products, brands, categories..."
+					class="search-input"
+				>
+				<button class="search-btn">🔍</button>
+			</div>
+			<div class="header-stats">
+				<div class="stat-item">
+					<span class="stat-label">Total Items</span>
+					<span class="stat-value" id="totalItems">0</span>
+				</div>
+				<div class="stat-item">
+					<span class="stat-label">Total Value</span>
+					<span class="stat-value" id="totalValue">$0</span>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- Main Container -->
+	<div class="main-container">
+		<!-- Sidebar Filters -->
+		<aside class="sidebar">
+			<div class="filter-section">
+				<h3 class="filter-title">Filters</h3>
+				<button class="btn-reset">Reset All</button>
+			</div>
+
+			<div class="filter-group">
+				<h4 class="filter-label">Category</h4>
+				<div class="filter-options" id="categoryFilter">
+					<!-- Populated dynamically -->
+				</div>
+			</div>
+
+			<div class="filter-group">
+				<h4 class="filter-label">Brand</h4>
+				<div class="filter-options" id="brandFilter">
+					<!-- Populated dynamically -->
+				</div>
+			</div>
+
+			<div class="filter-group">
+				<h4 class="filter-label">Size</h4>
+				<div class="filter-options" id="sizeFilter">
+					<!-- Populated dynamically -->
+				</div>
+			</div>
+
+			<div class="filter-group">
+				<h4 class="filter-label">Color</h4>
+				<div class="filter-options" id="colorFilter">
+					<!-- Populated dynamically -->
+				</div>
+			</div>
+
+			<div class="filter-group">
+				<h4 class="filter-label">Availability</h4>
+				<label class="checkbox-label">
+					<input type="checkbox" class="availability-filter" value="in-stock">
+					<span>In Stock Only</span>
+				</label>
+			</div>
+		</aside>
+
+		<!-- Main Content -->
+		<main class="content">
+			<!-- Results Header -->
+			<div class="results-header">
+				<h2 class="results-title">Warehouse Inventory</h2>
+				<div class="view-options">
+					<button class="view-btn active" data-view="grid">Grid View</button>
+					<button class="view-btn" data-view="list">List View</button>
+				</div>
+			</div>
+
+			<!-- Products Grid -->
+			<div class="products-grid" id="productsGrid">
+				<!-- Populated dynamically -->
+				<div class="loading">Loading inventory...</div>
+			</div>
+
+			<!-- Empty State -->
+			<div class="empty-state" id="emptyState" style="display: none;">
+				<div class="empty-icon">📦</div>
+				<h3>No products found</h3>
+				<p>Try adjusting your filters or search terms</p>
+			</div>
+		</main>
+	</div>
+
+	<!-- Product Detail Modal -->
+	<div class="modal" id="productModal">
+		<div class="modal-content">
+			<button class="modal-close">&times;</button>
+			<div class="modal-body" id="modalBody">
+				<!-- Populated dynamically -->
+			</div>
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+</html>
